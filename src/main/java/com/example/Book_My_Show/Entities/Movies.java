@@ -2,12 +2,21 @@ package com.example.Book_My_Show.Entities;
 
 
 
-
-import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Movies {
 
     @Id

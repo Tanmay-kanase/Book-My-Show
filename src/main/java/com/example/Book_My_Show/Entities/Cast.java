@@ -1,31 +1,31 @@
 package com.example.Book_My_Show.Entities;
 
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Types {
+public class Cast {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long typeId;
+    private Long castId;
 
-    private String typeName;
+    private String picUrl;
+    private String name;
+    private String role;
+    private String language;
 
-    @ManyToMany(mappedBy = "types")
-    private Set<Movies> movies = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "movie_id")
+    private Movies movie;
 
     // Getters and Setters
 }
